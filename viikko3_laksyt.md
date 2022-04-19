@@ -5,8 +5,8 @@
 * Artikkelissa listataan tärkeimmät Markdown komennot ja niiden käyttämät symbolit.
 * Esim. Yksi risuaita (#) luo otsikon (heading 1) ja kaksi alaotsikon.
 * Listan saa luotua joko tähdellä, tai järjestysluvulla (numerolista).
-* Linkit toimivat hakasulkeilla ja sulkeilla, eli hakasulkeisiin linkin nimi ja sulkeisiin itse linkki.
-* Kuvat toimivat samalla periaatteella paitsi ennen hakasulkuja tulee huutomerkki.
+* Linkit toimivat hakasulkeilla ja sulkeilla `[Link](url)`, eli hakasulkeisiin linkin nimi ja sulkeisiin itse linkki.
+* Kuvat toimivat samalla periaatteella `![Image](url/kansio)`, paitsi ennen hakasulkuja tulee huutomerkki.
 * Sisennys >> -merkkejä käyttäen, mitä useampi sen sisennetympi.
 * Kolmella yläpilkulla (`) saadaan luotua *koodilohkoja*.
 * Toimiakseen kuvien linkkien täytyy olla oikein, eli linkin täytyy loppua kuvaformaattiin (esim. .png) 
