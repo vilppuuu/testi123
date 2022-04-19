@@ -9,6 +9,7 @@
 * Kuvat toimivat samalla periaatteella paitsi ennen hakasulkuja tulee huutomerkki.
 * Sisennys >> -merkkejä käyttäen, mitä useampi sen sisennetympi.
 * Kolmella yläpilkulla (`) saadaan luotua *koodilohkoja*.
+* Toimiakseen kuvien linkkien täytyy olla oikein, eli linkin täytyy loppua kuvaformaattiin (esim. .png) 
 
 ### a)  MarkDown.
 
@@ -25,12 +26,13 @@
 
 * git diff näyttää taas muokatut tiedostot sisältöineen, ja niihin tehdyt muutokset.
 ![Image](https://i.imgur.com/XJBYnAG.png)
+
 * git blame näyttää yhteen tiedostoon tehdyt muutokset (esim git blame viikko3_laksyt.md näyttäisi tämän tiedoston ja siihen tehdyt muutokset ja niiden tilan (commit vai ei) rivikohtaisesti. Tälle voi myös antaa erinäisiä arvoja esim. blame -L 1,10 näyttäisi vain rivit 1-10.
 ![Image](https://i.imgur.com/84snvxg.png)
  
 ### c) Huppis! Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset --hard’.
 
-> Poistin tiedoston asdasdasdsa git rm -komennolla, jonka jälkeen varmistin vielä että se on poistettu. Tämän jälkeen ajoin git reset --hard -komennon, mikä siis palauttaa varaston viimeisimmän commitin tilaan.
+> Poistin tiedoston asdasdasdsa git rm -komennolla, jonka jälkeen varmistin vielä että se on poistettu. Tämän jälkeen ajoin git reset --hard -komennon, mikä siis palauttaa varaston viimeisimmän commitin tilaan, eli tässä tapauksessa poistettu tiedosto ilmaantui takaisin, koska muutosta ei ollut commitattu.
 
 ![Image](https://i.imgur.com/ax1BbO1.png) 
 
