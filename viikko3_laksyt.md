@@ -17,7 +17,7 @@
 ### b) Pull first. Tee useita muutoksia git-varastoosi.
 
 >  Loin viikko3_laksyt markdown tiedoston git-varastoon, lisäksi toisen tyhjän tiedoston nimellätesti_b, jonka jälkeen käytin git add . -komentoa. Poistin myös git rm komennolla turhan tiedoston, jonka jälkeen tein commitin (git commit).
-![Image](https://i.imgur.com/wWIH3h5.png)
+![Image](https://i.imgur.com/2VQwwQQ.png)
 
 ### b) Kaikki kirjataan. Näytä omalla git-varastollasi esimerkit komennoista ‘git log’, ‘git diff’ ja ‘git blame’. Selitä tulokset.
 * git log näyttää tehdyt commitit, niiden kuvaukset ja timestampit, eli näkee nopeasti mitä on tehty ja milloin, jos kuvaukset ovat selkeitä.
