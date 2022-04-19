@@ -42,6 +42,6 @@
 
 ![Image](https://i.imgur.com/husBWZk.png)
 
-> Testataksen poistin nanon (apt-get remove nano) ja nanon asetustiedoston (etc/nanorc). Ajoin tilan sudo salt "*" state.apply nano (aluksi unohtui tähti tuosta komennosta, jolloin antaa virheen: "no minions matched the target..."), mutta muuten tila toimi odotetulla tavalla.
+> Testataksen poistin nanon (apt-get remove nano) ja nanon asetustiedoston (etc/nanorc). Ajoin tilan sudo salt "*" state.apply nano (aluksi unohtui tähti tuosta komennosta, jolloin antaa virheen: "no minions matched the target..."), mutta muuten tila toimi odotetulla tavalla, eli paketti asentui ja asetustiedosto tuli käyttöön.
 
 ![Image](https://i.imgur.com/TFiaHgO.png)
