@@ -43,9 +43,8 @@
 ![Image](https://i.imgur.com/cKNPkAF.png)
 
 ### c)  Tiedän mitä teit viime kesän^H^H^H komennolla. Säädä jotain ohjelmaa ja etsi sen muuttamat tiedostot aikajanasta. Tee sitten tästä oma Saltin tila.
-> Ohjelma, jota päätin säätää on UFW (Uncomplicated Firewall). Aloitin tarkastamalla, että se on päällä ja "aktivoitu" kirjoittamalla komennon "sudo ufw enable", johon tuli vastaus "Firewall is active and enabled on system startup", eli toimii. Tämän jälkeen lisäsin palomuurille random säännön, eli blokkasin satunnaisen ip-osoitteen (sudo ufw deny from 123.123.123.123). Sitten kävin ottamassa aikajanan /etc -kansiosta, jossa näkyi kaksi muokattua tiedostoa ufw:n kansiossa(user.rules & user6.rules).
+> Ohjelma, jota päätin säätää on UFW (Uncomplicated Firewall). Aloitin tarkastamalla, että se on päällä ja "aktivoitu" kirjoittamalla komennon "sudo ufw enable", johon tuli vastaus "Firewall is active and enabled on system startup", eli toimii. Tämän jälkeen lisäsin palomuurille random säännön, eli blokkasn satunnaisen ip-osoitteen (sudo ufw deny from 123.123.123.123). Sitten kävin ottamassa aikajanan /etc -kansiosta, jossa näkyi kaksi muokattua tiedostoa ufw:n kansiossa(user.rules & user6.rules).
 
-![Image](https://i.imgur.com/)
 > Loin /srv/salt hakemistoon ufw -kansion, jonne kopioin nämä kaksi asetustiedostoa. Tämän jälkeen poistin tuon äsken kirjoitetun turhan säännön user.rules -tiedostosta, jolloin se on taas paikkansa pitävä. Kirjoitin salt-tilan, joka käyttää näitä tiedostoja ufw:n asetuksiin.
 ```
  ufw_conf:
