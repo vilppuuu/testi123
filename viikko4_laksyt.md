@@ -27,12 +27,16 @@
 ### b) CSI Pasila. Tiedostoista saa aikajanan 'cd /etc/; sudo find -printf '%T+ %p\n'|sort|tail'.
 
 * Anna esimerkki aikajanasta: 
->> 
-* Selitä jokainen kohta komennosta, jolla aikajana tehdään. Vinkki: '%T+' löytyy 'man find' kohdasta printf.
->> 
-* Aja jokin komento, joka muuttaa järjestelmän yhteisiä asetustiedostoja. Ota uusi aikajana ja etsi muutos sieltä. Onko samalla hetkellä muutettu yhtä vai useampaa tiedostoa?
 >>
+![Image](https://i.imgur.com/)
+* Selitä jokainen kohta komennosta, jolla aikajana tehdään. Vinkki: '%T+' löytyy 'man find' kohdasta printf.
+>> Find etsii tiedostoja hakemistoista, -printf tulostaa etsityt tiedostot, %T+ näyttää tiedoston viimeisimmän muokkausajan, %p näyttää tiedoston nimen, \n rivittää tekstin, sort järjestää tiedostot muokkausajan mukaan, ja tail näyttää vain kymmenen viimeisintä tiedostoa.
+* Aja jokin komento, joka muuttaa järjestelmän yhteisiä asetustiedostoja. Ota uusi aikajana ja etsi muutos sieltä. Onko samalla hetkellä muutettu yhtä vai useampaa tiedostoa?
+>> Kävin vaihtamassa koneen nimeä /etc/hostname ja /etc/hosts -tiedostoissa. Aikajana näyttää vain yhden muutoksen molempiin tiedostoihin, toisaalta asetukset tulevat käyttöön vasta bootin jälkeen (aikajana näytti samalta bootin jälkeenkin).
+![Image](https://i.imgur.com/l)
 
 ### c)  Tiedän mitä teit viime kesän^H^H^H komennolla. Säädä jotain ohjelmaa ja etsi sen muuttamat tiedostot aikajanasta. Tee sitten tästä oma Saltin tila.
-
+> Ohjelma, jota päätin säätää on UFW (palomuuri). Aloitin tarkastamalla, että se on päällä ja "aktivoitu" kirjoittamalla komennon "sudo ufw enable", johon tuli vastaus "Firewall is active and enabled on system startup", eli toimii. Tämän jälkeen lisäsin palomuurille random säännön, eli blokkasin satunnaisen ip-osoitteen (sudo ufw deny from 123.123.123.123). Sitten kävin ottamassa aikajanan /etc -kansiosta, jossa näkyi kaksi muokattua tiedostoa ufw:n kansiossa.
+![Image](https://i.imgur.com/)
+>Loin /srv/salt hakemistoon ufw -kansion, jonne kopioin nämä kaksi asetustiedostoa.
 ### d)  Asenna jokin toinen ohjelma asetuksineen.
