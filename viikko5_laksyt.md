@@ -10,7 +10,7 @@
 
 ![Image](https://i.imgur.com/IPjh5PS.png)
 
-> Siirryin /srv/salt -kansioon, jonne loin uuden kansion hello ja sinne uuden init.sls tiedoston(kopioin myös käsinkirjoitetun skriptin tähän kansioon), johon aloin kirjottamaan salt-tilaa skriptille. Käytin jo tutuksi tullutta file.managed -funktiota, jossa ensiksi määrittelin mistä tämä kansiosta tämä skripti pitäisi löytyä sen jälkeen määrittelin mitä tiedostoa käytetään lähteenä, ja tuolla mode parametrillä annoin oikeudet 744, eli käyttäjä saa lukea, kirjoittaa, ja ajaa, ryhmä ja muut vain lukea. Ennen testiä poistin /usr/local/bin -kansiosta hello.sh -tiedoston ja sen jälkeen ajoin tilan, joka toimikin toivotusti, eli tiedosto ilmestyi sinne ja sen pystyi ajamaan, ja kun katsoi ls -l tiedoston tietoja olivat sen oikeudetkin kunnossa.
+> Siirryin /srv/salt -kansioon, jonne loin uuden kansion hello ja sinne uuden init.sls tiedoston (kopioin myös käsinkirjoitetun skriptin tähän kansioon),johon aloin kirjottamaan salt-tilaa skriptille. Käytin jo tutuksi tullutta file.managed -funktiota, jossa ensiksi määrittelin mistä kansiosta tämä skripti pitäisi löytyä sen jälkeen määrittelin mitä tiedostoa käytetään lähteenä, ja tuolla mode: -parametrillä annoin oikeudet 744, eli käyttäjä saa lukea, kirjoittaa, ja ajaa, ryhmä ja muut vain lukea. Ennen testiä poistin /usr/local/bin -kansiosta hello.sh -tiedoston ja sen jälkeen ajoin tilan, joka toimikin toivotusti, eli tiedosto ilmestyi sinne ja sen pystyi ajamaan, ja kun katsoi ls -l tiedoston tietoja olivat sen oikeudetkin kunnossa.
 
 ```
  1 /usr/local/bin/hello.sh:
@@ -25,7 +25,7 @@
 
 ### b) whatsup.sh. Tee järjestelmään uusi komento, joka kertoo ajankohtaisia tietoja; asenna se orjille. Vinkkejä: Voit näyttää valintasi mukaan esimerkiksi päivämäärää, säätä, tietoja koneesta, verkon tilanteesta.
 
-> Suuntasin taas tuonne /usr/local/bin -kansioon ja loin sinne whatup.sh -tiedoston. Ainakin omilla skriptaustaidoillani helpoin keino saada tehdä skripti,joka näyttää tietoja oli käyttää tuota echoa, ja laittaa se tulostamaan komentojen tuloksia, jotka antavat tietoa järjestelmästä. Kun komento laitetaan gravismerkkien` sisällä tuohon echo stringiin tulostuu sen output siihen. Laitoin skriptiin muutamia komentoja, jotka kertovat mm. käyttöjärjestelmän tietoja (uname -a), päivämäärän ja ajan (date), ip-osoitteen (hostname -I), prosessorin tietoja (lscpu), ja vapaan ram-muistin määärän (free). Kuten edellisessäkin tehtävässä skriptille pitää antaa oikeudet (sudo chmod 744), ja sitten testata.
+> Suuntasin taas tuonne /usr/local/bin -kansioon ja loin sinne whatup.sh -tiedoston. Ainakin omilla skriptaustaidoillani helpoin keino saada tehdä skripti,joka näyttää tietoja oli käyttää tuota echoa, ja laittaa se tulostamaan komentojen tuloksia, jotka antavat tietoa järjestelmästä. Kun komento laitetaan gravismerkkien` sisällä tuohon echo stringin sisään, tulostuu sen output siihen. Laitoin skriptiin muutamia komentoja, jotka kertovat mm. käyttöjärjestelmän tietoja (uname -a), päivämäärän ja ajan (date), ip-osoitteen (hostname -I), prosessorin tietoja (lscpu), ja vapaan ram-muistin määärän (free). Kuten edellisessäkin tehtävässä skriptille pitää antaa oikeudet (sudo chmod 744), ja sitten testata.
 
 ```
 #!/bin/bash
@@ -56,7 +56,7 @@ echo "------------------------------------------------------------------------"
 
 ### c) hello.py. Tee järjestelmään uusi komento Pythonilla ja asenna se orjille. Vinkkejä: Hei maailma riittää, mutta propellihatut saavat toki koodaillakin. Shebang on "#!/usr/bin/python3". Helpoin Python-komento on: print("Hei Tero!")
 
-> Eli taas tuonne /usr/local/bin -kansioon, ja sinne uusi tiedosto python_testi.py, johon ensimmäiselle riville tuo "#!/usr/bin/python3", mikä siis kertoo järjestelmälle kyseessä olevan python-skriptin. Skriptin sisällöksi kopioin campusonlinen python-kurssille tekemäni alkukantaisen laskimen. Sitten taas chmodilla oikeudet skriptille ja testi. Toimi niinkuin pitääkin, kun löytyi oikea komento, eli pitää olla tuo python3, ei tunnista pelkkää pythonia.
+> Eli taas tuonne /usr/local/bin -kansioon, ja sinne uusi tiedosto python_testi.py, johon ensimmäiselle riville tuo "#!/usr/bin/python3", mikä siis kertoo järjestelmälle kyseessä olevan python-skriptin. Skriptin sisällöksi kopioin Campusonlinen python-kurssille tekemäni alkukantaisen laskimen. Sitten taaschmodilla oikeudet skriptille ja testi. Toimi niinkuin pitääkin, kun löytyi oikea komento, eli pitää olla tuo python3, ei tunnista pelkkää pythonia.
 
 ![Image](https://i.imgur.com/mF3VaTn.png)
 
@@ -99,13 +99,13 @@ echo "------------------------------------------------------------------------"
 
 ### e) Lukua, ei luottamusta. Kokeile yhtä kohdassa d-Intel löytämääsi modulia koneella. Tämä on infraa koodina, joten luottamusta ei tarvita. Voit lukea koodista, mitä olet ajamassa.
 
-> Elikkä päätin ladata KatriL:n tekemän tulikettu -moduulin, jonka siis sai menemällä hänen postauksessa maintsemaansa github -varastoon, ja sieltä vihreätä Code -painiketta painamalla saa ladattua .zip:nä kloonin omalle koneelle. Purin zip:n downloads -kansiossa, jonka jälkeen siirsin salt-tilan sisältävänfirefox -kansion /srv/salt. Kokeilin ajaa, mutta antoi "No matching sls found for firefox" erroria. Koska ne tiedostot ovat kyllä siellä kansiossa oletin, että kyseessä saattaisi olla oikeuksien kanssa joku ongelma, joten nopeasti ls -l ja erilaisethan ne ovat verrattuna muihin(ei luku -tai ajo-oikeutta, myös eri omistaja?), annoin chmodilla kaikki oikeudet (777), ja kokeilin toimiiko ja tilan sai ajettua, mutta antaa erroria tuosta firefoxin syspref.js -tiedostosta. Nopeasti katsoin init.sls, ja siellä tuon firefoxin file.managed -funktion kohdalla olisi pitänyt olla se - makedirs: True, niin olisi oletettavasti toiminut.
+> Elikkä päätin ladata KatriL:n tekemän tulikettu -moduulin, jonka siis sai menemällä hänen postauksessa maintsemaansa github -varastoon, ja sieltä vihreätä Code -painiketta painamalla saa ladattua zip:inä kloonin omalle koneelle. Purin zip:in downloads -kansiossa, jonka jälkeen siirsin salt-tilan sisältävänfirefox -kansion /srv/salt. Kokeilin ajaa, mutta antoi "No matching sls found for firefox" erroria. Koska ne tiedostot ovat kyllä siellä kansiossa oletin, että kyseessä saattaisi olla oikeuksien kanssa joku ongelma, joten nopeasti ls -l ja erilaisethan ne ovat verrattuna muihin(ei luku -tai ajo-oikeutta, myös eri omistaja?), annoin chmodilla kaikki oikeudet (777), ja kokeilin toimiiko ja tilan sai ajettua, mutta antaa erroria tuosta firefoxin syspref.js -tiedostosta. Nopeasti katsoin init.sls, ja siellä tuon firefoxin file.managed -funktion kohdalla olisi pitänyt olla se - makedirs: True, niin olisi oletettavasti toiminut.
 
-[!Image](https://i.imgur.com/JD2CSP6.png)
+![Image](https://i.imgur.com/JD2CSP6.png)
 
-[!Image](https://i.imgur.com/0GrG1KF.png)
+![Image](https://i.imgur.com/0GrG1KF.png)
 
-[!Image](https://i.imgur.com/ImL5h0P.png)
+![Image](https://i.imgur.com/ImL5h0P.png)
 
 ### f) Palauta linkki raporttiisi Laksuun.
 
