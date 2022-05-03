@@ -56,13 +56,13 @@ echo "------------------------------------------------------------------------"
 
 ### c) hello.py. Tee järjestelmään uusi komento Pythonilla ja asenna se orjille. Vinkkejä: Hei maailma riittää, mutta propellihatut saavat toki koodaillakin. Shebang on "#!/usr/bin/python3". Helpoin Python-komento on: print("Hei Tero!")
 
-> Eli taas tuonne /usr/local/bin -kansioon, ja sinne uusi tiedosto python_testi.py, johon ensimmäiselle riville tuo "#!/usr/bin/python3", mikä siis kertoo järjestelmälle kyseessä olevan python-skriptin. Skriptin sisällöksi kopioin Campusonlinen python-kurssille tekemäni alkukantaisen laskimen. Sitten taaschmodilla oikeudet skriptille ja testi. Toimi niinkuin pitääkin, kun löytyi oikea komento, eli pitää olla tuo python3, ei tunnista pelkkää pythonia.
+> Eli taas tuonne /usr/local/bin -kansioon, ja sinne uusi tiedosto python_testi.py, johon ensimmäiselle riville tuo "#!/usr/bin/python3", mikä siis kertoo järjestelmälle kyseessä olevan python-skriptin. Skriptin sisällöksi kopioin Campusonlinen python-kurssille tekemäni alkukantaisen laskimen. Sitten taas chmodilla oikeudet skriptille ja testi. Toimi niinkuin pitääkin, kun löytyi oikea komento, eli pitää olla tuo python3, ei tunnista pelkkää pythonia.
 
 ![Image](https://i.imgur.com/mF3VaTn.png)
 
 ###  d) Laiskaa skriptailua. Tee kansio, josta jokainen skripti kopioituu orjille. Vinkki: 'salt-call --local sys.state_doc file.recurse'. Kun tämä on valmis, on todella helppoa laittaa orjille mikä tahansa yhden tiedoston shell script, Python-ohjelma, Perl-ohjelma, Go-binääri tai muu yhden binäärin ohjelma.
 
-> Aloitin luomalla /srv/salt:iin uuden kansion lazy ja sen sisään toisen kansion skriptit, jonne siirsin (sudo mv) aiemmissa tehtävissä tehdyt skriptit tuolta usr/local/bin -kansiosta. Kävin kurkkaamassa saltin dokumentaatiosta, mitä siellä sanotaan tuosta vinkatusta file.recurse -funktiosta ja kokeilin kirjoittaa sitä käyttäen tilan, joka kopioisi skriptit kansion minioneille. Ensimmäinen yritys tarjoili vain alla olevan errorin, mistä kyllä selviää ettäpolku source:n polku oli väärin(absoluuttinen polku ei kelpaa), vaan  pitää käyttää tuota salt://. Tämän korjattuani tilan sai ajettua ja se toimi halutusti, eli skriptit kopioituivat sinne minne pitikin ja niitä pystyi ajamaan, kun niille oli annettu oikeudet tuolla file_modella.
+> Aloitin luomalla /srv/salt:iin uuden kansion lazy ja sen sisään toisen kansion skriptit, jonne siirsin (sudo mv) aiemmissa tehtävissä tehdyt skriptit tuolta usr/local/bin -kansiosta. Kävin kurkkaamassa saltin dokumentaatiosta, mitä siellä sanotaan tuosta vinkatusta file.recurse -funktiosta ja kokeilin kirjoittaa sitä käyttäen tilan, joka kopioisi skriptit kansion minioneille. Ensimmäinen yritys tarjoili vain alla olevan errorin, mistä kyllä selviää että source:n polku oli väärin (absoluuttinen polku ei kelpaa), vaan  pitää käyttää tuota salt://. Tämän korjattuani tilan sai ajettua ja se toimi halutusti, eli skriptit kopioituivat sinne minne pitikin ja niitä pystyi ajamaan, kun niille oli annettu oikeudet tuolla file_modella.
 
 ![Image](https://i.imgur.com/oZLUhhq.png)
 
