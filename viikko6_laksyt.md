@@ -40,7 +40,7 @@ chocolatey.installed:
 
 ![Img](https://i.imgur.com/8THG4TD.png)
 
-![Img](https://i.imgur.com/A2ZInlr.png)
+![Img](https://i.imgur.com/A2ZInIr.png)
 
 ## d) Goal. Tee projektisi palautussivu. Voit tehdä sen GitHubiin, kotisivullesi tai mihin vain haluat. Mistä teet miniprojektin? Kuvaile miniprojektin tarkoitus lauseella tai parilla. Asenna käsin (jokin alustava osa) projektistasi ja ota ruutukaappaus siitä, miten lopputulosta käytetään.
 
