@@ -14,17 +14,17 @@
 
 ##  a) Suolaikkuna. Asenna Salt Windowsiin. Jos ehdit jo asentaa, voit kirjoittaa muistinvaraisesti, mutta muista silloin merkitä, että tämä on muistista kirjoitettu. Näytä testillä (test.ping, file.managed tms), että Salt toimii.
 
-> Kerkesin tämän tehdä jo tunnilla, joten seuraava on kirjotettu muistista. Eli saltin sivuilta ([link](https://saltproject.io/)) latasin salt-minionista uusimman version (Salt-Minion-3004.1-AMD64-Setup.exe). Tämän jälkeen klikkasin asennusohjelman käyntiin, ja siinä ei muistaakseni ollu mitään ihmeellisyyksiä eli pari kertaa klikkailin next/install. Jossain vaiheessa asennusta se kysyttiin mitä konfiguraatiota käytetään, ja masterin ip:tä, sekä minionille nimeä. Konffiksi jäi default, ip:ksi laitoin Linux-koneen, jossa salt-master asennettuna, ja nimeksi win_desktop. Sitten komentokehotteesta kokeilin toimivuutta komennolla: *salt-call --local test.ping*.
+> Kerkesin tämän tehdä jo tunnilla, joten seuraava on kirjotettu muistista. Eli saltin [sivuilta](https://saltproject.io/) latasin salt-minionista uusimman version (Salt-Minion-3004.1-AMD64-Setup.exe). Tämän jälkeen klikkasin asennusohjelman käyntiin, ja siinä ei muistaakseni ollu mitään ihmeellisyyksiä eli pari kertaa klikkailin next/install. Jossain vaiheessa asennusta se kysyttiin mitä konfiguraatiota käytetään, ja masterin ip:tä, sekä minionille nimeä. Konffiksi jäi default, ip:ksi laitoin Linux-koneen, jossa salt-master asennettuna, ja nimeksi win_desktop. Sitten komentokehotteesta kokeilin toimivuutta komennolla: *salt-call --local test.ping*.
 
-![Img](i.imgur.com/dmYXUMI.png) 
+![Img](https://i.imgur.com/dmYXUMI.png) 
 
 ## b)  Single. Näytä komentorivillä Saltilla (state.single) esimerkit funktioista file ja cmd.
 
 > Eli kuten a -tehtävässäkin ajoin paikallisesti tuota *salt-call --local* käyttäen, mutta tällä kertaa myös lisäten siihen *state.single*, mikä tarkoittaa, että käytetään vain yhtä funktiota. File.managed -funktiolla loin uuden tiedoston tuonne omaan hakemistooni, jonne olin luonut uuden kansion salt, ja cmd.run -funktiolla käytin msinfo32-komentoa, joka näyttää järjestelmätiedot Windowsilla. Varoitus tuossa file.managed -funktiossa kertoo, että koska tiedostolle ei ole määritelty lähdettä eikä sisältöä, se ei päällekirjoita sitä turhaan.
 
-![Img](i.imgur.com/akz97VD.png)
+![Img](https://i.imgur.com/akz97VD.png)
 
-![Img](i.imgur.com/sdLiZ3n.png)
+![Img](https://i.imgur.com/sdLiZ3n.png)
 
 ## c) IaCcuna. Tee Windowsissa infraa koodina, ja aja se paikallisesti (salt-call --local state.apply foo)
 
@@ -38,9 +38,9 @@ chocolatey.installed:
 - name: vlc
 ```
 
-![Img](i.imgur.com/8THG4TD.png)
+![Img](https://i.imgur.com/8THG4TD.png)
 
-![Img](i.imgur.com/A2Zlnlr.png)
+![Img](https://i.imgur.com/A2Zlnlr.png)
 
 ## d) Goal. Tee projektisi palautussivu. Voit tehdä sen GitHubiin, kotisivullesi tai mihin vain haluat. Mistä teet miniprojektin? Kuvaile miniprojektin tarkoitus lauseella tai parilla. Asenna käsin (jokin alustava osa) projektistasi ja ota ruutukaappaus siitä, miten lopputulosta käytetään.
 
@@ -48,4 +48,4 @@ chocolatey.installed:
 
 > Ideana tehdä moduuli, joka asettaa/korjaa Windowsin käyttäjän oletusasetukset siedettäviksi, sekä poistaa Windowsin mukana tulevat turhat ohjelmat, ja asentaa joitakin ohjelmia. Itselle ainakin ollut aina ongelma, kun asentaa "puhtaan" Windowsin, niin sen mukana tulee ohjelmia, joita en todellakaan haluaisi, sekä käytännössä jokainen Windowsin oletusasetus täytyy käydä muuttamassa. Noita roskaohjelmia olen aiemmin poistellut käsin käynnistävalikosta, tai sitten Powershellillä (*get-appxpackage programname | remove-appxpackage*). Asetukset olen käynyt aina klikkailemassa läpi käsin (voi tehdä myös regeditillä). Mitä nyt alustavasti tutkin, niin ainakin Windowsin asetusten muokkaaminen rekisterin kautta pitäisi onnistua Saltilla. Noiden Windowsin oletusohjelmien poistaminen Saltilla käyttämättä cmd.run ja powershell-skriptejä saattaa osoittautua turhan vaikeaksi, sillä niitä ei ole Saltin omassa tai Chocolateyn paketeissa, ja en tiedä saako niitä edes luotua käsin, kun ne asentuvat Windows Storen kautta, eivätkä siis ole "normaaleja" ohjelmia.
 
-![Img](i.imgur.com/6vCtfAB.png)
+![Img](https://i.imgur.com/6vCtfAB.png)
