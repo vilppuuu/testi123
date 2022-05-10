@@ -24,7 +24,7 @@
 
 ![Img](https://i.imgur.com/akz97VD.png)
 
-![Img](https://i.imgur.com/sdLiZ3n.png)
+![Img](https://i.imgur.com/sdLiX3n.png)
 
 ## c) IaCcuna. Tee Windowsissa infraa koodina, ja aja se paikallisesti (salt-call --local state.apply foo)
 
@@ -40,7 +40,7 @@ chocolatey.installed:
 
 ![Img](https://i.imgur.com/8THG4TD.png)
 
-![Img](https://i.imgur.com/A2Zlnlr.png)
+![Img](https://i.imgur.com/A2ZInlr.png)
 
 ## d) Goal. Tee projektisi palautussivu. Voit tehdä sen GitHubiin, kotisivullesi tai mihin vain haluat. Mistä teet miniprojektin? Kuvaile miniprojektin tarkoitus lauseella tai parilla. Asenna käsin (jokin alustava osa) projektistasi ja ota ruutukaappaus siitä, miten lopputulosta käytetään.
 
